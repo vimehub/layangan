@@ -1,0 +1,15 @@
+{
+  "kecepatan": { "value": 170, "min": 80, "max": 320, "step": 5, "label": "Kecepatan angin" },
+  "jarak_finish": { "value": 1200, "min": 400, "max": 3000, "step": 50, "label": "Jarak ke Talaga Remis" },
+  "kemudi": { "value": 7, "min": 2.5, "max": 14, "step": 0.5, "label": "Kepekaan kemudi" },
+  "tarikan_tali": { "value": 3, "min": 0, "max": 10, "step": 0.2, "label": "Tarikan tali saat menanjak" },
+  "pulih_tali": { "value": 2, "min": 0, "max": 10, "step": 0.2, "label": "Pemulihan tali saat menurun" },
+  "hembusan": { "value": 0.34, "min": 0.05, "max": 1, "step": 0.02, "label": "Kekuatan angin naik" },
+  "nilai_padi": { "value": 60, "min": 0, "max": 500, "step": 10, "label": "Skor seikat padi" },
+  "nilai_wajit": { "value": 120, "min": 0, "max": 800, "step": 10, "label": "Skor bingkisan wajit" },
+  "nilai_angklung": { "value": 180, "min": 0, "max": 1000, "step": 10, "label": "Skor angklung" },
+  "nilai_jarak": { "value": 0.35, "min": 0, "max": 2, "step": 0.05, "label": "Skor per meter" },
+  "jeda_rival": { "value": 5.4, "min": 2.5, "max": 12, "step": 0.5, "label": "Jarak kemunculan layangan lawan" },
+  "volume": { "value": 0.7, "min": 0, "max": 1, "step": 0.05, "label": "Keras suara" },
+  "aksen": { "value": "#B4552F", "kind": "color", "label": "Warna tanah liat" }
+}

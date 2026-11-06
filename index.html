@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Majalengka Game · Layang-layang di atas Argapura</title>
+<meta name="description" content="Terbangkan layangan Sunda di atas sawah terasering Argapura, kumpulkan padi, dan capai Talaga Remis.">
+<meta name="podbot-orientation" content="either">
+<meta name="podbot-start" content="Space">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="mindblown">
+<meta property="og:title" content="Majalengka Game · Layang-layang di atas Argapura">
+<meta property="og:description" content="Terbangkan layangan Sunda di atas sawah terasering Argapura, kumpulkan padi, dan capai Talaga Remis.">
+<meta property="og:url" content="https://majalengka-game-layang-layang-di-atas-argapura.mindblown.ai/">
+<meta property="og:image" content="https://majalengka-game-layang-layang-di-atas-argapura.mindblown.ai/thumb.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Majalengka Game · Layang-layang di atas Argapura">
+<meta name="twitter:description" content="Terbangkan layangan Sunda di atas sawah terasering Argapura, kumpulkan padi, dan capai Talaga Remis.">
+<meta name="twitter:image" content="https://majalengka-game-layang-layang-di-atas-argapura.mindblown.ai/thumb.webp">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAA/1BMVEXlnRX1pwPlXAH52V/27d3sKhrzlAH52iKlZghYJhH3bgAwEg/u2hz64J3xmAPz9ef57KemEwPisl7ZcQD52Bb/AABnYF1lSx3ZbgD05LOqVQC6UAGqqlW9oWL/f3/cuZHJvsr4xwv39GD37dR/fwB///+AXEW6vdC/w7//qlX/qqr15b357s4AAAD7xwb4qAXoeAL8uATrhQLzmQLTZwH81gb86bPFWgH+5An99tH//QDbcwH72I4SAAD5y26/fwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADqOUkZAAAAQHRSTlPyFPD/8v5i8v3/C/8g8KMcEv7/XqUB//6pagNJA/8C//9nEmcCAv///wMDhLkA/v36/v38/P77/f79A/v8//8EtAR+KwAAAm9JREFUeNpdk4lW2zAQRUeyIy9x7OwJUAqU7q12yTvm//+qI0MOlDnezryr55E0An6JHu8q7rq44u8DLh9r/hiv6i6Ou/pv/PhtXX0A1vyq62okui48rjDxH/CbV6swHrW4jrvVquJf3gPz+LF+CWTGrvvz6jEDn/l6VdfTWI8Bwjuqa/T4fAGqvhqncYQogu00TRBNMI5TjelX4BNfRwBgBmuMEFZJZRKAcY3CC0B6AtIMiwWlVEq6wI/BSCD9rxnoe0442VtF6UJJra1CUMkSk7z/ygEXsAjFFIzRjfRR5O2GMjbncKY98GLf7gveP+whTUUAREqhfOhfBSiSVgpWgG9tKhKdhCuViYCCCdkmBaDu7G4vvE9PGfgo8ZCd0taLklmHBFAD2uRS+FOWok3StgLS5ckLmVsNhsKN08KCFiKVIvEthkf/VAhdWqHdDfCz0Vpq4cU2vr9Dwt/dx1uBgNVanTkcdkZaBFA/Hn9s23Y6Hn8GQlsrze4AnChrLAJj/LRc3rbtLb7iSeCKGTsQDjnfGRMsovh7lkXeR9nyGEf4W2PMjudw6AlVBpdYRKst6khsV5HQ0qqBkh5/ESxU2AQsLM0wUi+CPjiFBmE3CS/RAgkPT3Pg9IKBKlEKQH5gagiISLE+DBASd98pdshnALdbORcKhWyDkVmcIWYUCWclNMwzL6kbkJAbbJbFRlprhsaVKLwAeU9U0yChQzdh1xjjmkaRPr90dc4ZbdDDSDXrCnXKeP52Lp45Qw8XKg3lh/EsTOHtZAUC065xeAWUzQW8O5vXnJQozuEcduz1x9ONAwg7K1yRMyP8Mp7zf3Sbk+9myTBeAAAAAElFTkSuQmCC">
+</head>
+<body>
+<div id="stage">
+  <div id="field" aria-hidden="true"></div>
+  <div id="altitude" aria-hidden="true"></div>
+  <div id="dusk" aria-hidden="true"></div>
+  <div id="vignette" aria-hidden="true"></div>
+  <div class="indigo-band top" aria-hidden="true"></div>
+  <div class="indigo-band bottom" aria-hidden="true"></div>
+
+  <header id="hud" hidden>
+    <div class="hud-row">
+      <div class="plate padi-plate">
+        <img src="assets/hud_icons_01_padi_counter.webp" alt="" class="padi-icon">
+        <div class="plate-copy">
+          <span class="plate-label">Padi</span>
+          <span class="plate-num" id="hud-padi">0</span>
+        </div>
+      </div>
+
+      <div class="plate route-plate">
+        <img src="assets/hud_icons_03_landmark_pin.webp" alt="" class="pin-icon">
+        <div class="route-wrap">
+          <div class="route-track"><i id="route-dot"></i></div>
+          <span class="plate-label">Talaga Remis</span>
+        </div>
+      </div>
+
+      <div class="hud-right">
+        <div class="plate spool-plate">
+          <img src="assets/hud_icons_02_string_spool.webp" alt="" class="spool-icon">
+          <div class="plate-copy">
+            <span class="plate-label">Tali</span>
+            <span class="plate-num" id="hud-tali">100%</span>
+            <span class="thread"><i id="thread-fill"></i></span>
+          </div>
+        </div>
+
+        <div class="hud-buttons">
+          <button id="btn-pause" class="disc-btn" type="button" aria-label="Jeda" title="Jeda">
+            <img src="assets/control_buttons_02_jeda.webp" alt="">
+          </button>
+          <button id="btn-restart" class="disc-btn" type="button" aria-label="Ulangi" title="Ulangi">
+            <img src="assets/control_buttons_03_ulangi.webp" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hud-sub">
+      <span class="sub-item"><em>Jarak</em> <b id="hud-jarak">0 m</b></span>
+      <span class="sub-item"><em>Skor</em> <b id="hud-skor">0</b></span>
+    </div>
+  </header>
+
+  <div id="title-screen" class="overlay title-overlay">
+    <div class="title-stack">
+      <img class="medallion" src="assets/layangan_medallion.webp" alt="">
+      <div class="title-plate plate-shape">
+        <h1>MAJALENGKA<span>GAME</span></h1>
+      </div>
+      <div class="tagline"><span>Layang-layang di atas Argapura</span></div>
+      <p class="intro">Terbangkan layangan, kumpulkan padi, dan capai Talaga Remis.</p>
+      <button id="btn-main" class="main-btn" type="button" disabled>
+        <img src="assets/control_buttons_01_main.webp" alt="">
+        <span>MAIN</span>
+      </button>
+      <p class="micro">Geser naik turun, atau pakai panah atas dan bawah.</p>
+    </div>
+  </div>
+
+  <div id="pause-screen" class="overlay" hidden>
+    <div class="pause-plate plate-shape">
+      <p class="eyebrow">Jeda</p>
+      <h2>Layangan menunggu angin.</h2>
+      <p class="pause-copy">Geser naik turun untuk menerbangkan layangan. Naik mengencangkan tali, turun mengendurkannya. Hindari tali merah layangan lain.</p>
+      <div class="pause-actions">
+        <button id="btn-resume" class="pill" type="button">LANJUT</button>
+        <button id="btn-pause-restart" class="pill ghost" type="button">ULANGI</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="results" class="overlay" hidden>
+    <div class="results-plate plate-shape">
+      <p class="eyebrow" id="result-eyebrow">Perjalanan selesai</p>
+      <h2 id="result-title">Sampai di Talaga Remis</h2>
+      <p class="result-sub" id="result-sub">Matahari turun di atas air, layanganmu pulang.</p>
+      <div class="score-rows">
+        <div class="score-row"><span>Skor</span><b id="result-skor">0</b></div>
+        <div class="score-row"><span>Padi</span><b id="result-padi">0</b></div>
+        <div class="score-row"><span>Jarak</span><b id="result-jarak">0 m</b></div>
+        <div class="score-row best"><span>Terbaik</span><b id="result-best">0</b></div>
+      </div>
+      <div class="results-actions">
+        <button id="btn-again" class="pill" type="button">ULANGI</button>
+        <button id="btn-home" class="pill ghost" type="button">MAIN LAGI</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="hint" hidden>Geser naik turun · panah atas dan bawah</div>
+
+  <button id="sound-btn" class="sound-btn" type="button" aria-label="Suara" aria-pressed="true" title="Suara">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path class="spk" d="M4 9h3l5-4v14l-5-4H4z"></path>
+      <path class="wave w1" d="M15.5 8.5a5 5 0 010 7"></path>
+      <path class="wave w2" d="M18 6a8.5 8.5 0 010 12"></path>
+      <path class="mute" d="M4 4l16 16"></path>
+    </svg>
+  </button>
+
+  <div id="grain" aria-hidden="true"></div>
+</div>
+
+
+
+<script src="https://mindblown.ai/lib/phaser-3.90.0/phaser.min.js"></script>
+<script src="game.js"></script>
+<script src="https://api.mindblown.ai/pod.js" data-game="9ad81fe9-93d5-4bc8-8550-566025fa4df0" data-slug="majalengka-game-layang-layang-di-atas-argapura"></script>
+</body>
+</html>
