@@ -4,6 +4,10 @@ Terbangkan layangan Sunda di atas sawah terasering Argapura, Majalengka.
 Kumpulkan padi, wajit, dan angklung, hindari layangan lawan, dan capai
 Talaga Remis.
 
+## Demo
+
+🎮 Main langsung di browser: https://vimehub.github.io/layangan/
+
 ## Cara main
 
 Buka `index.html` di browser (atau sajikan folder ini lewat server statis
